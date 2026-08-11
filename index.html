@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Studio Veco — Tecnología que resuelve problemas reales</title>
 <meta name="description" content="No vendemos tecnología, vendemos resultados. Automatización, sitios web y sistemas a medida.">
+<link rel="icon" type="image/png" href="./Assets/02_Web_y_App_SVG/favicon1.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -37,7 +38,7 @@ img{display:block;max-width:100%}
 /* Loader */
 #loader{position:fixed;inset:0;z-index:9999;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform .9s var(--ease2), opacity .6s}
 #loader.out{transform:translateY(-100%);opacity:0;pointer-events:none}
-.loader-mark{width:72px;height:72px;color:var(--lime);animation:loaderPulse 1.2s var(--ease) infinite alternate}
+.loader-mark{width:88px;height:88px;animation:loaderPulse 1.2s var(--ease) infinite alternate;filter:drop-shadow(0 0 20px rgba(212,255,50,.3))}
 @keyframes loaderPulse{0%{transform:scale(1)}100%{transform:scale(1.08)}}
 .loader-line{width:120px;height:2px;background:rgba(255,255,255,.12);margin-top:32px;overflow:hidden;border-radius:2px;position:relative}
 .loader-line i{position:absolute;left:0;top:0;bottom:0;width:0%;background:var(--lime);transition:width .2s linear}
@@ -281,7 +282,7 @@ footer{padding:32px 0}
 <body>
 
 <div id="loader">
-  <svg class="loader-mark" viewBox="0 0 100 100" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M22,0 L78,0 A22,22 0 0 1 100,22 L100,78 A22,22 0 0 1 78,100 L22,100 A22,22 0 0 1 0,78 L0,22 A22,22 0 0 1 22,0 Z M82,70 L100,70 L100,100 L70,100 L70,82 A8,8 0 0 1 82,70 Z"/></svg>
+  <img class="loader-mark" src="./Assets/02_Web_y_App_SVG/favicon1.svg" alt="Veco" style="width:88px;height:88px;object-fit:contain">
   <div class="loader-line"><i id="loaderBar"></i></div>
   <div class="loader-text">Studio Veco — Cargando</div>
 </div>
@@ -289,10 +290,10 @@ footer{padding:32px 0}
 
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-brand">
-      <svg class="mark" viewBox="0 0 100 100" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M22,0 L78,0 A22,22 0 0 1 100,22 L100,78 A22,22 0 0 1 78,100 L22,100 A22,22 0 0 1 0,78 L0,22 A22,22 0 0 1 22,0 Z M82,70 L100,70 L100,100 L70,100 L70,82 A8,8 0 0 1 82,70 Z"/></svg>
-      <span class="wordmark">STUDIO VECO</span>
-    </a>
+    <a href="#top" class="nav-brand" style="gap:10px">
+    <img src="./Assets/02_Web_y_App_SVG/favicon1.svg" alt="Veco icon" style="width:38px;height:38px;object-fit:contain">
+    <h2>studio veco</h2>
+</a>
     <nav class="nav-links">
       <a href="#que-hacemos">Qué hacemos</a>
       <a href="#como-trabajamos">Cómo trabajamos</a>
@@ -483,11 +484,21 @@ footer{padding:32px 0}
       <p>Esta sección está lista para sumar casos reales apenas los tengamos documentados. Cada card preparado para imagen real.</p>
     </div>
     <div class="proj-grid">
-      <div class="proj-card" data-reveal><div class="proj-media"><div class="stripes"></div><span class="proj-badge">Próximamente</span><svg class="mark" viewBox="0 0 100 100" fill="currentColor"><path d="M22,0 L78,0 A22,22 0 0 1 100,22 L100,78 A22,22 0 0 1 78,100 L22,100 A22,22 0 0 1 0,78 L0,22 A22,22 0 0 1 22,0 Z M82,70 L100,70 L100,100 L70,100 L70,82 A8,8 0 0 1 82,70 Z"/></svg></div><div class="proj-body"><h3>Próximo proyecto</h3><p>Cliente + problema resuelto en una línea.</p></div></div>
-      <div class="proj-card" data-reveal><div class="proj-media"><div class="stripes"></div><span class="proj-badge">Próximamente</span><svg class="mark" viewBox="0 0 100 100" fill="currentColor"><path d="M22,0 L78,0 A22,22 0 0 1 100,22 L100,78 A22,22 0 0 1 78,100 L22,100 A22,22 0 0 1 0,78 L0,22 A22,22 0 0 1 22,0 Z M82,70 L100,70 L100,100 L70,100 L70,82 A8,8 0 0 1 82,70 Z"/></svg></div><div class="proj-body"><h3>Próximo proyecto</h3><p>Cliente + problema resuelto en una línea.</p></div></div>
-      <div class="proj-card" data-reveal><div class="proj-media" style="background:var(--black)"><span class="proj-badge" style="background:var(--lime);color:var(--black);border-color:var(--lime)">¿Tu proyecto acá?</span><svg class="mark" style="color:rgba(255,255,255,.2)" viewBox="0 0 100 100" fill="currentColor"><path d="M22,0 L78,0 A22,22 0 0 1 100,22 L100,78 A22,22 0 0 1 78,100 L22,100 A22,22 0 0 1 0,78 L0,22 A22,22 0 0 1 22,0 Z M82,70 L100,70 L100,100 L70,100 L70,82 A8,8 0 0 1 82,70 Z"/></svg></div><div class="proj-body"><h3>Sumemos el tuyo</h3><p>Agendá una charla y vemos si hacemos fit.</p></div></div>
+      <div class="proj-card" data-reveal>
+        <div class="proj-media">
+          <div class="stripes"></div>
+          <span class="proj-badge">Próximamente</span>
+          <img src="./Assets/02_Web_y_App_SVG/favicon.svg" alt="V" style="width:44px;height:44px;object-fit:contain" class="mark"></div><div class="proj-body"><h3>Próximo proyecto</h3><p>Cliente + problema resuelto en una línea.</p></div></div>
+      <div class="proj-card" data-reveal>
+        <div class="proj-media"><div class="stripes"></div><span class="proj-badge">Próximamente</span>
+        <img src="./Assets/02_Web_y_App_SVG/favicon.svg" alt="V" style="width:44px;height:44px;object-fit:contain" class="mark"></div><div class="proj-body"><h3>Próximo proyecto</h3><p>Cliente + problema resuelto en una línea.</p></div>
     </div>
-  </div>
+
+
+     <div class="proj-card" data-reveal>
+      <div class="proj-media" style="background:var(--black)"><span class="proj-badge" style="background:var(--lime);color:var(--black);border-color:var(--lime)">¿Tu proyecto acá?</span>
+        <img src="./Assets/02_Web_y_App_SVG/favicon1.svg" alt="V" style="width:44px;height:44px;object-fit:contain" class="mark"></div><div class="proj-body"><h3>Próximo proyecto</h3><p>Cliente + problema resuelto en una línea.</p></div></div>
+   </div>
 </section>
 
 <section class="contact" id="contacto">
@@ -516,7 +527,10 @@ footer{padding:32px 0}
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <a href="#top" class="footer-brand"><svg class="mark" style="width:22px;height:22px" viewBox="0 0 100 100" fill="currentColor"><path d="M22,0 L78,0 A22,22 0 0 1 100,22 L100,78 A22,22 0 0 1 78,100 L22,100 A22,22 0 0 1 0,78 L0,22 A22,22 0 0 1 22,0 Z M82,70 L100,70 L100,100 L70,100 L70,82 A8,8 0 0 1 82,70 Z"/></svg> STUDIO VECO</a>
+      <a href="#top" class="footer-brand" style="gap:10px">
+  <img src="./Assets/02_Web_y_App_SVG/favicon1.svg" alt="Veco" style="width:26px;height:26px;object-fit:contain">
+  <h2>Studio Veco</h2>
+</a>
       <span>Gualeguaychú, Argentina · hola.studioveco@gmail.com</span>
       <span>© <span id="year"></span> Studio Veco · Tecnología que resuelve problemas reales</span>
     </div>
