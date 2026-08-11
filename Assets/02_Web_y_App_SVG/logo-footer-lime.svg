@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <rect width="600" height="200" fill="#0A0A0A"/>
+  <g transform="translate(0,10)">
+    <path d="M 18 22 L 58 128 Q 64 142 75 142 Q 86 142 92 128 L 132 22 L 102 22 L 75 95 L 48 22 Z" fill="#D9FF5E" />
+  </g>
+  <text x="160" y="95" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="72" letter-spacing="-2" fill="#D9FF5E">studio</text>
+  <text x="160" y="165" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="88" letter-spacing="-4" fill="#D9FF5E">veco</text>
+</svg>
