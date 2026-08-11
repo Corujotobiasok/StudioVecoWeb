@@ -168,10 +168,9 @@ section{padding:96px 0}
 .p-card:nth-child(2)::after{background:var(--violet)}
 .p-card:nth-child(3)::after{background:var(--pink)}
 
-/* Manifesto */
+/* Manifesto - FIXED MOBILE */
 .manifesto{background:var(--gray-100);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
 .manifesto-layout{display:grid;grid-template-columns:340px 1fr;gap:64px}
-@media(max-width:900px){.manifesto-layout{grid-template-columns:1fr;gap:32px}}
 .manifesto-sticky{position:sticky;top:120px;align-self:start}
 .m-lines{display:flex;flex-direction:column}
 .m-line{font-family:var(--font-display);font-size:clamp(22px,2.6vw,32px);line-height:1.25;padding:18px 0;border-bottom:1px solid var(--gray-200);color:#D8D8D3;transition:color .5s var(--ease), transform .5s var(--ease);transform:translateX(0)}
@@ -179,6 +178,15 @@ section{padding:96px 0}
 .m-line.lit::before{content:'→';margin-right:12px;color:var(--lime);font-weight:700}
 .progress-track{width:2px;background:var(--gray-200);height:100%;position:absolute;left:0;top:0;border-radius:2px}
 .progress-fill{width:100%;background:var(--black);height:0%;transition:height .2s linear}
+@media(max-width:900px){
+  .manifesto{padding:64px 0}
+  .manifesto-layout{grid-template-columns:1fr;gap:24px}
+  .manifesto-sticky{position:relative;top:auto}
+  .manifesto-layout > div:nth-child(2){padding-left:0 !important}
+  .progress-track{display:none}
+  .m-line{font-size:20px;padding:16px 0;opacity:1;color:#B8B8B3}
+  .m-line.lit{color:var(--black);transform:none}
+}
 
 /* Services Bento */
 .bento{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:auto auto;gap:16px}
@@ -577,23 +585,36 @@ const io2 = new IntersectionObserver(entries=>{
 },{threshold:.5});
 procs.forEach(el=>io2.observe(el));
 
-// Manifesto spotlight + progress
+// Manifesto spotlight + progress - MOBILE FIX
 const mLines = document.querySelectorAll('[data-m]');
 const mProg = document.getElementById('mProgress');
-const ioM = new IntersectionObserver(entries=>{
-  entries.forEach(en=>{
-    if(en.isIntersecting) en.target.classList.add('lit');
-  });
-},{rootMargin:'-40% 0px -40% 0px', threshold:0});
-mLines.forEach(l=>ioM.observe(l));
-window.addEventListener('scroll',()=>{
-  const sec = document.querySelector('.manifesto');
-  if(!sec) return;
-  const rect = sec.getBoundingClientRect();
-  const total = sec.offsetHeight;
-  const scrolled = Math.min(Math.max(( -rect.top) / (total - window.innerHeight*0.5),0),1);
-  if(mProg) mProg.style.height = (scrolled*100)+'%';
-},{passive:true});
+const isMobileManifesto = window.matchMedia('(max-width: 900px)').matches;
+
+if(isMobileManifesto){
+  // En mobile, activar todas con un threshold más amigable
+  const ioMobile = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting) en.target.classList.add('lit');
+    });
+  },{threshold:0.2, rootMargin:'0px 0px -10% 0px'});
+  mLines.forEach(l=>ioMobile.observe(l));
+} else {
+  const ioM = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting) en.target.classList.add('lit');
+    });
+  },{rootMargin:'-40% 0px -40% 0px', threshold:0});
+  mLines.forEach(l=>ioM.observe(l));
+  
+  window.addEventListener('scroll',()=>{
+    const sec = document.querySelector('.manifesto');
+    if(!sec || !mProg) return;
+    const rect = sec.getBoundingClientRect();
+    const total = sec.offsetHeight;
+    const scrolled = Math.min(Math.max(( -rect.top) / (total - window.innerHeight*0.5),0),1);
+    mProg.style.height = (scrolled*100)+'%';
+  },{passive:true});
+}
 
 // Contact form -> mailto
 document.getElementById('contactForm').addEventListener('submit',e=>{
