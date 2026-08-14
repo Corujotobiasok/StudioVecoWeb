@@ -511,11 +511,18 @@ footer{padding:32px 0}
         <a class="contact-email" href="mailto:hola.studioveco@gmail.com">hola.studioveco@gmail.com</a>
         <div class="status"><span class="dot"></span> Respondemos dentro de las 24 horas · Gualeguaychú, Argentina</div>
       </div>
-      <form class="form" id="contactForm" data-reveal>
+      <form class="form" id="contactForm" name="contacto-veco" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-reveal>
+        <!-- Requerido por Netlify -->
+        <input type="hidden" name="form-name" value="contacto-veco" />
+        <p style="display:none">
+          <label>No llenar: <input name="bot-field" /></label>
+        </p>
+
         <div class="field"><label>Nombre</label><input name="name" required placeholder="Tu nombre"></div>
         <div class="field"><label>Email</label><input name="email" type="email" required placeholder="vos@empresa.com"></div>
         <div class="field"><label>Empresa (opcional)</label><input name="company" placeholder="Nombre de tu negocio"></div>
         <div class="field"><label>Contanos tu problema</label><textarea name="message" required placeholder="Ej: perdemos 10h por semana confirmando turnos por WhatsApp..."></textarea></div>
+        
         <button class="btn-submit" type="submit">Enviar mensaje <span>↗</span></button>
         <p class="form-msg" id="formMsg"></p>
       </form>
@@ -639,6 +646,23 @@ document.getElementById('contactForm').addEventListener('submit',e=>{
   const body = `Nombre: ${name}\nEmail: ${email}\nEmpresa: ${company||'-'}\n\nMensaje:\n${message}`;
   window.location.href = 'mailto:hola.studioveco@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   document.getElementById('formMsg').textContent='Se abrió tu programa de correo con el mensaje listo.';
+});
+
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('formMsg');
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const data = new FormData(form);
+  fetch('/', { method: 'POST', body: data })
+    .then(() => {
+      msg.textContent = '✅ Listo, nos llegó. Te respondemos en 24hs.';
+      msg.style.color = '#a3ff12';
+      form.reset();
+    })
+    .catch(() => {
+      msg.textContent = '❌ Ups, error. Escribinos directo a hola.studioveco@gmail.com';
+      msg.style.color = '#ff4444';
+    });
 });
 </script>
 </body>
