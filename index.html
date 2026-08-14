@@ -8,6 +8,7 @@
 <link rel="icon" type="image/png" href="./Assets/02_Web_y_App_SVG/favicon1.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QE6QFKX5Y2"></script>
 <style>
 :root{
   --black:#0A0A0B;
@@ -637,7 +638,11 @@ if(isMobileManifesto){
   },{passive:true});
 }
 
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-QE6QFKX5Y2');
 
 const form = document.getElementById('contactForm');
 const msg = document.getElementById('formMsg');
