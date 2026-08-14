@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Veco - Links</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080808;color:#fff;font-family:'Inter',system-ui,sans-serif;min-height:100vh;display:flex;justify-content:center;padding:24px 16px}
+.container{width:100%;max-width:380px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-0.03em}
+.logo span{color:#a3ff12}
+.live{display:flex;align-items:center;gap:6px;font-size:11px;letter-spacing:0.08em;color:#888;text-transform:uppercase}
+.dot{width:6px;height:6px;background:#a3ff12;border-radius:50%;box-shadow:0 0 10px #a3ff12;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+h1{font-size:32px;line-height:0.95;letter-spacing:-0.04em;font-weight:800;margin-bottom:10px}
+h1 em{font-style:normal;color:#a3ff12}
+.sub{color:#6b6b6b;font-size:14px;margin-bottom:28px}
+.links{display:flex;flex-direction:column;gap:12px}
+a.btn{display:flex;align-items:center;gap:14px;padding:18px 18px;background:#141414;border:1px solid #1e1e1e;border-radius:18px;text-decoration:none;color:#fff;transition:all .18s ease}
+a.btn:hover{background:#fff;color:#000;border-color:#fff;transform:translateY(-1px)}
+a.btn.primary{background:#fff;color:#000;border-color:#fff}
+a.btn.primary:hover{background:#a3ff12;border-color:#a3ff12}
+.icon{width:38px;height:38px;border-radius:10px;background:#1e1e1e;display:grid;place-items:center;font-size:18px;flex-shrink:0}
+a.btn:hover .icon{background:rgba(0,0,0,0.08)}
+a.btn.primary .icon{background:#000;color:#fff}
+.text b{display:block;font-size:15px;font-weight:600;letter-spacing:-0.01em}
+.text i{display:block;font-style:normal;font-size:12.5px;color:#7a7a7a;margin-top:2px;font-weight:400}
+a.btn:hover .text i{color:rgba(0,0,0,0.6)}
+a.btn.primary .text i{color:rgba(0,0,0,0.6)}
+.divider{display:flex;align-items:center;gap:12px;margin:18px 0;color:#2a2a2a;font-size:11px;text-transform:uppercase;letter-spacing:0.12em}
+.divider:before,.divider:after{content:"";flex:1;height:1px;background:#1a1a1a}
+a.outline{justify-content:center;padding:16px;border:1px dashed #222;background:transparent;color:#666;border-radius:18px;text-decoration:none;font-size:13.5px;letter-spacing:-0.01em;transition:all .18s}
+a.outline:hover{border-color:#444;color:#fff;background:#111}
+.footer{margin-top:auto;padding-top:32px;text-align:center;font-size:11px;color:#333;letter-spacing:0.04em}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="top">
+    <div class="logo">veco<span>.</span></div>
+    <div class="live"><div class="dot"></div> disponible</div>
+  </div>
+
+  <h1>¿Te ayudamos a<br><em>vender más?</em></h1>
+  <p class="sub">Juan, tocá lo que más te duele hoy:</p>
+
+  <div class="links">
+    <!-- CAMBIA TU NUMERO ACA -->
+    <a class="btn primary" href="https://wa.me/5493446000000?text=Hola%20Veco!%20Quiero%20que%20mas%20gente%20conozca%20mi%20negocio%20y%20me%20lleguen%20clientes%20nuevos" target="_blank">
+      <div class="icon">📍</div>
+      <div class="text"><b>Quiero que más gente me conozca</b><i>Que me encuentren y me escriban</i></div>
+    </a>
+
+    <a class="btn" href="https://wa.me/5493446000000?text=Hola%20Veco!%20Estoy%20cansado%20de%20hacer%20siempre%20lo%20mismo%2C%20quiero%20que%20se%20haga%20solo" target="_blank">
+      <div class="icon">⏰</div>
+      <div class="text"><b>Estoy cansado de hacer siempre lo mismo</b><i>Que se responda y agende solo</i></div>
+    </a>
+
+    <a class="btn" href="https://wa.me/5493446000000?text=Hola%20Veco!%20Tengo%20todo%20desordenado%20en%20papeles%20y%20planillas%2C%20quiero%20algo%20simple%20para%20ordenarme" target="_blank">
+      <div class="icon">📦</div>
+      <div class="text"><b>Tengo todo desordenado en papeles</b><i>Quiero algo simple para ordenarme</i></div>
+    </a>
+
+    <a class="btn" href="https://wa.me/5493446000000?text=Hola%20Veco!%20Pierdo%20mensajes%20de%20WhatsApp%20y%20clientes%2C%20necesito%20ordenar%20eso" target="_blank">
+      <div class="icon">💬</div>
+      <div class="text"><b>Pierdo clientes por WhatsApp</b><i>Mensajes sin responder, turnos perdidos</i></div>
+    </a>
+
+    <div class="divider">o</div>
+
+    <a class="outline" href="https://studiovecoweb.netlify.app/" target="_blank">Ver sitio web oficial →</a>
+  </div>
+
+  <div class="footer">Studio Veco · Gualeguaychú → Donde haga falta</div>
+</div>
+</body>
+</html>
